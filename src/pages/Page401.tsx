@@ -1,5 +1,5 @@
 import { Link } from '@nextui-org/react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import useInitDataStore from '../store/initData'
 import useUserStore from '../store/user'
 
@@ -7,7 +7,6 @@ const NotFound = () => {
   const resetUser = useUserStore(state => state.reset)
   const resetInitData = useInitDataStore(state => state.reset)
   const navigate = useNavigate()
-  const location = useLocation()
 
   const onLogout = () => {
 
@@ -15,9 +14,8 @@ const NotFound = () => {
     resetUser()
     resetInitData()
 
-    let params = new URLSearchParams();
-    params.set('from', location.pathname);
-    return navigate('/login?' + params.toString());
+
+    return navigate('/login');
   }
 
   return (<div>
