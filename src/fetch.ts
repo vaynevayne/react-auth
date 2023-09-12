@@ -1,5 +1,5 @@
 import useInitDataStore from './store/initData'
-import useUserStore from './store/user'
+import useUserStore from './store/user-store'
 
 const sleep = (delay:number) => new Promise(resolve => {
   setTimeout(resolve, delay)

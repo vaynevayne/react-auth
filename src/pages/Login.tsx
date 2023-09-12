@@ -10,6 +10,7 @@ const Login = () => {
   let params = new URLSearchParams(location.search);
   let from = params.get('from') || '/';
 
+  console.log('login page');
 
   const onLogin = () => {
     localStorage.setItem('token', '1')

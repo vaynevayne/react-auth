@@ -1,17 +1,17 @@
 import { Button } from '@nextui-org/react'
 
-const Admin = () => {
+const Home = () => {
 
   const onCreateError = () => {
     throw new Error('sasa')
   }
 
   return (<div>
-    Admin
+    Home
     <Button onClick={onCreateError}>触发错误</Button>
   </div>
 
   )
 }
 
-export default Admin
+export default Home

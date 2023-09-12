@@ -1,18 +1,17 @@
 import { Link } from '@nextui-org/react'
 import { useNavigate } from 'react-router-dom'
-import useInitDataStore from '../store/initData'
-import useUserStore from '../store/user'
+import useLocalStore from '../store/local-store'
+import useUserStore from '../store/user-store'
 
 const NotFound = () => {
   const resetUser = useUserStore(state => state.reset)
-  const resetInitData = useInitDataStore(state => state.reset)
+  const resetLocalStore = useLocalStore(state => state.reset)
   const navigate = useNavigate()
 
   const onLogout = () => {
 
-    localStorage.removeItem('token')
+    resetLocalStore()
     resetUser()
-    resetInitData()
 
 
     return navigate('/login');
